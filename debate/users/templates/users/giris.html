@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+</head>
+<body>
+    <h2>Giriş Yap</h2>
+    {% if hata_mesaji %}
+        <p>{{ hata_mesaji }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Kullanıcı Adı:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Şifre:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Giriş Yap">
+    </form>
+    <p>Hesabınız yok mu? <a href="{% url 'register' %}">Kaydolun</a></p>
+</body>
+</html>

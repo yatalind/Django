@@ -1,0 +1,76 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('8533-scaled.jpg'); /* Arka plan görseli */
+    background-color: #004d0080; /* Saydam yeşil arka plan rengi */
+    background-blend-mode: multiply; /* Arka plan görseli ve renk karışım modu */
+    background-position: -400px 0;
+    background-size: auto;
+    background-attachment: fixed;
+}
+
+.green-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004d00;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-title {
+    margin-left: 860px;
+    color: white; /* Yeniden düzenlendi */
+}
+
+.home-button {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 50px;
+}
+
+.home-button:hover {
+    background-color: white;
+    color: darkgreen;
+}
+
+
+.haber-wrapper {
+    max-width: 800px;
+    margin: 120px auto 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.haber-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.haber-image {
+    flex: 0 0 30%;
+    margin-right: 20px;
+}
+
+.haber-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.haber-content {
+    flex: 1;
+}
+
+.haber-container h2 {
+    color: red; /* Haber başlığı kırmızı renk */
+    font-style: bold;
+}

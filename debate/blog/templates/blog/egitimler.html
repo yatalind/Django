@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eğitimler - debate.com</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/egitimstyle.css' %}">
+</head>
+<body>
+    <div class="background-image"></div>
+    <header>
+        <div class="navbar-left">
+            <h1>Eğitimler</h1>
+            <p>Burada en güncel eğitimleri görüntüleyebilirsiniz.</p>
+        </div>
+        <div class="navbar-right">
+            <a href="/">Ana Sayfa</a>
+        </div>
+    </header>
+
+    <section class="egitimler">
+        {% if egitimler %}
+            {% for egitim in egitimler %}
+                <article class="egitim">
+                    <h2 class="egitim-title">{{ egitim.baslik }}</h2>
+                    <p class="egitim-aciklama">{{ egitim.icerik }}</p>
+                </article>
+            {% endfor %}
+        {% else %}
+            <p>Henüz eğitim bulunmamaktadır.</p>
+        {% endif %}
+    </section>
+
+    <script>
+        document.querySelectorAll('.egitim-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const aciklama = title.nextElementSibling;
+                const isVisible = aciklama.style.display === 'block';
+                
+                document.querySelectorAll('.egitim-aciklama').forEach(aciklama => {
+                    aciklama.style.display = 'none';
+                });
+                
+                if (!isVisible) {
+                    aciklama.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Haberler - debate.com</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/haberstyle.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="green-bar">
+            <h1 class="header-title">Haberler</h1>
+            <a href="/" class="home-button">Ana Sayfa</a>
+        </div>
+    </div>
+
+    <div class="haber-wrapper">
+        {% for haber in haberler %}
+            <div class="haber-container">
+                <div class="haber-image">
+                    <img src="{{ haber.resim.url }}" alt="Haber Resmi">
+                </div>
+                <div class="haber-content">
+                    <h2>{{ haber.baslik }}</h2>
+                    <p>{{ haber.icerik }}</p>
+                    <p>{{ haber.tarih }}</p>
+                </div>
+            </div>
+        {% empty %}
+            <p>Henüz haber bulunmamaktadır.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

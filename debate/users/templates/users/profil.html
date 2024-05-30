@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notlarım</title>
+    <style>
+        /* CSS ile sayfa düzeni */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #004d0080; /* Sayfa arka plan rengi #004d0080 */
+            background-image: url('8533-scaled.jpg'); /* Arka plan resmi */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .navbar {
+            background-color: #0d652d; /* Navigasyon çubuğu arka plan rengi koyu yeşil */
+            position: fixed;
+            width: 100%;
+            padding: 10px 0;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            color: #fff; /* Başlık rengi beyaz */
+            display: inline-block;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 20px;
+            font-weight: bold;
+            display: inline-block;
+            float: right; /* Ana Sayfa butonunu sağa hizala */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 70px; /* Navigasyon çubuğu yüksekliği kadar üstte başlasın */
+        }
+        .notlar {
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .notlar h3 {
+            color: red;
+        }
+        .not-ekle-link {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 200px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .not-ekle-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigasyon çubuğu -->
+    <div class="navbar">
+        <h1>Notlarım</h1>
+        <a href="http://127.0.0.1:8000/">Ana Sayfa</a>
+    </div>
+
+    <div class="container">
+        {% if notlar %}
+            {% for not in notlar %}
+                <div class="notlar">
+                    <h3>{{ not.baslik }}</h3>
+                    <p>{{ not.icerik }}</p>
+                    <p>Oluşturma Tarihi: {{ not.olusturma_tarihi }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align: center;">Henüz not eklenmemiş.</p>
+        {% endif %}
+    </div>
+
+    <!-- Not Ekle düğmesi -->
+    <a href="{% url 'not_ekle' %}" class="not-ekle-link">Not Ekle</a>
+</body>
+</html>

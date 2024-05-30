@@ -1,0 +1,97 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('8533-scaled.jpg'); /* Arka plan görseli */
+    background-color: #004d0080; /* Saydam yeşil arka plan rengi */
+    background-blend-mode: multiply; /* Arka plan görseli ve renk karışım modu */
+    background-position: -400px 0;
+    background-size: auto;
+    background-attachment: fixed;
+}
+
+.site-title em {
+    font-family: 'Lustria', sans-serif;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004d00;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.login {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 30px; /* Butonları sağa hizala */
+}
+
+.login-button {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: #004d00;
+    border-radius: 5px;
+    margin-right: 50px; /* Butonlar arasına boşluk bırak */
+}
+
+.login-button:first-child {
+    margin-left: 0; /* İlk butona boşluk bırakma */
+}
+
+.login-button:hover {
+    background-color: #003300;
+}
+
+.content {
+    text-align: center;
+    color: white; /* Metin rengini beyaz olarak ayarla */
+    margin-top: 80px; /* Topbar yüksekliği kadar bir boşluk bırak */
+    position: relative; /* İçeriği yerleştirirken konumunu ayarlamak için */
+    z-index: 1; /* Topbar'ın önünde olmasını sağlar */
+    font-weight: bold; /* Yazı tipini kalın yap */
+    font-size: 28px; /* Font büyüklüğünü ayarla */
+    background-color: transparent;
+    font-family: 'Kanit', sans-serif;
+    background-image: url('welcome.png'); /* Resim dosyasının adını ve uzantısını buraya yazın */ /* Arka plan resminin boyutunu kapsayacak şekilde ayarla */
+    background-position: center; /* Arka plan resminin konumunu merkezle */
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position-y: -80px;
+}
+
+.different-text {
+    font-family: "Lustria", sans-serif; /* Farklı fontu ayarla */
+    font-size: 18px; /* Farklı font büyüklüğünü ayarla */
+    font-weight: normal; /* Farklı fontu kalın yap */
+    color: white; /* Farklı renk ayarla */
+    margin-top: 350px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #004d00;
+    color: white;
+    padding: 20px 50px;
+    text-decoration: none;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #003300;
+}

@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/kayit.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Kayıt Ol</h2>
+        <form action="{% url 'register' %}" method="post" id="kayit-form"> <!-- URL pattern'ini kullanarak form action'ı -->
+            {% csrf_token %}
+            {{ form.as_p }} <!-- Formu Django'nun form API'si ile render ediyoruz -->
+            <button type="submit">Kayıt Ol</button>
+        </form>
+    </div>
+</body>
+</html>
